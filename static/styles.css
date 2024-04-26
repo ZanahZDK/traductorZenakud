@@ -21,7 +21,7 @@ body, html {
     overflow-y: auto;
     padding: 10px;
     display: flex;
-    flex-direction: column-reverse; /* Hace que los mensajes nuevos aparezcan desde abajo hacia arriba */
+    flex-direction: column-reverse; 
 }
 
 #translateForm {
@@ -60,7 +60,7 @@ body, html {
 }
 
 .icon {
-    width: 24px; /* O el tamaño que desees */
+    width: 24px;
     height: 28px;
     margin-right: 10px;
 }

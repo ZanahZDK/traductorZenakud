@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-# Función para cargar los significados desde un archivo
 def cargar_significados(archivo):
     significados = {}
     try:
@@ -17,10 +16,9 @@ def cargar_significados(archivo):
         print(f"Error al cargar el archivo: {e}")
     return significados
 
-# Función para traducir el texto usando los significados cargados
 def traducir_texto(texto, significados):
     letras_permitidas = {'A', 'D', 'E', 'J', 'K', 'M', 'N', 'O', 'S', 'W'}
-    texto = texto.upper()  # Normalizar a mayúsculas para consistencia
+    texto = texto.upper() 
     texto_set = set(texto)
     letras_no_permitidas = texto_set - letras_permitidas
 
@@ -31,10 +29,9 @@ def traducir_texto(texto, significados):
     traduccion = []
     i = 0
     while i < len(texto):
-        parte = texto[i:min(i+5, len(texto))]  # Considerar hasta 5 caracteres
+        parte = texto[i:min(i+5, len(texto))] 
         encontrado = False
 
-        # Intentar extraer combinaciones de acuerdo a la longitud máxima permitida y ajustando por tipos
         for j in range(len(parte), 0, -1):
             segmento = texto[i:i+j]
             if segmento in significados:
@@ -46,11 +43,10 @@ def traducir_texto(texto, significados):
                     encontrado = True
                     break
 
-        if not encontrado:  # Si no encuentra ninguna combinación válida, avanzar un carácter
+        if not encontrado: 
             i += 1
 
     return ' '.join(traduccion)
-
 
 @app.route('/')
 def index():

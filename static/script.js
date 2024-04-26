@@ -1,8 +1,8 @@
 function translateText() {
     const text = document.getElementById('inputText').value;
-    document.getElementById('inputText').value = ''; // Limpiar el campo de entrada
+    document.getElementById('inputText').value = ''; 
     if (text.trim() === '') {
-        return; // No hacer nada si el texto está vacío
+        return; 
     }
     fetch('/traducir', {
         method: 'POST',
