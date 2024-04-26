@@ -17,14 +17,14 @@ def cargar_significados(archivo):
     return significados
 
 def traducir_texto(texto, significados):
-    letras_permitidas = {'A', 'D', 'E', 'J', 'K', 'M', 'N', 'O', 'S', 'W'}
+    letras_permitidas = {'A', 'D', 'E', 'J', 'K', 'M', 'N', 'O', 'S', 'W', 'Q'}
     texto = texto.upper() 
     texto_set = set(texto)
     letras_no_permitidas = texto_set - letras_permitidas
 
     if letras_no_permitidas:
         letras_no_permitidas_str = ', '.join(sorted(letras_no_permitidas))
-        return f"Zenakud solo usa las letras: A, D, E, J, K, M, N, O, S, W. Por favor, elimina las siguientes letras: {letras_no_permitidas_str}"
+        return f"Zenakud solo usa las letras: A, D, E, J, K, M, N, O, Q, S, W. Por favor, elimina las siguientes letras: {letras_no_permitidas_str}"
 
     traduccion = []
     i = 0

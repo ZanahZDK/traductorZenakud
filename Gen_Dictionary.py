@@ -1,7 +1,7 @@
 import random
 import os
 
-letras = ['A', 'D', 'E', 'J', 'K', 'M', 'N', 'O', 'S', 'W']
+letras = ['A', 'D', 'E', 'J', 'K', 'M', 'N', 'O', 'S', 'W', 'Q']
 
 significados = ["la ronda", "la partida", "lurker con Reyna", "clutch en spike rush", "xdd", "insano", "nadie nunca", "cachipun de pulpo","larga", "kru", "bora", "el deus", 
                 "netu", "cuenta rut", "deposito a plazo", "tenso", "ban", "COMO", "que locura", "lineup", "mufa", "labura", "vandal", "phantom",
